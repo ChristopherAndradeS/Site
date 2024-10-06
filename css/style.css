@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+:root
+{
+  --color1: #e2d6ee;
+  --color2: #ec86a5;
+  --color3: #ec868e;
+}
+
+body
+{
+  margin: 0px;
+  background-color: rgb(65, 65, 65);
+}
+
+div#header
+{
+  text-align: center;
+  font-weight: 500;
+  font-family: "Ubuntu";
+  color: rgb(230, 230, 230);
+  font-size: 3em;
+  background-color: var(--color3);
+  padding: 35px
+}
+
+table, th, td
+{
+  font-weight: normal;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+table#main, table#global
+{
+  margin: 50px auto 50px auto;
+  font-family: sans-serif;
+  padding: 10px;
+  width: 75%;
+}
+
+table#main > thead > tr > th, table#global > thead > tr > th
+{
+  font-size: 1em;
+  padding: 10px;
+  background-color: var(--color2);
+  text-align: center;
+  width: 25%;
+}
+
+table#global > thead > tr > th
+{
+  width: 50%;
+  font-size: 1.3em;
+  font-family: monospace;
+}
+
+table#main > tbody > tr > td.clock-div
+{
+  font-size: 1em;
+  padding: 10px;
+  text-align: center;
+  background-color: var(--color2);
+}
+
+table#main > tbody > tr > td.clock-desc
+{
+  font-size: 1em;
+  text-align: center;
+  padding: 20px;
+  background-color: var(--color2);
+}
+
+table#main > tbody > tr > td, table#global > tbody > tr > td
+{
+  font-size: 1em;
+  padding: 10px;
+}
+
+table#global > tbody > tr > td
+{
+  text-align: center;
+  font-size: 1.3em;
+  text-align: center;
+  padding: 10px;
+  font-family: monospace;
+}
+
+table#main > tbody > tr > td.clock-diff, table#main > tbody > tr > td.clock-next
+{
+  font-size: 1.3em;
+  font-weight: 100;
+  text-align: center;
+  padding: 10px;
+  font-family: monospace;
+
+}
+
+tr:nth-child(odd){
+  background-color: var(--color1);
+}
+
+tr:nth-child(even){
+  background-color: var(--color3);
+}
+
+table#main > tbody > tr > th{
+  background-color: var(--color1);
+}
+
+footer
+{
+  text-align: center;
+  font-weight: 500;
+  font-family: "Ubuntu";
+  color: rgb(230, 230, 230);
+  font-size: 2em;
+  background-color: var(--color3);
+  padding: 35px
+}
+
+img#icon
+{
+  width: 50px;
+  height: 50px;
+  margin: auto
+}
+
+footer > main
+{
+  margin: 10px
+}
