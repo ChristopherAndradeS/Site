@@ -30,7 +30,7 @@ div#header
   font-weight: 500;
   font-family: "Ubuntu";
   color: rgb(230, 230, 230);
-  font-size: 3em;
+  font-size: auto;
   background-color: var(--color3);
   padding: 35px
 }
@@ -47,7 +47,7 @@ table#main, table#global
   margin: 50px auto 50px auto;
   font-family: sans-serif;
   padding: 10px;
-  width: 50%;
+  width: 85%;
 }
 
 table#main > thead > tr > th, table#global > thead > tr > th
@@ -56,7 +56,6 @@ table#main > thead > tr > th, table#global > thead > tr > th
   padding: 10px;
   background-color: var(--color2);
   text-align: center;
-  width: 25%;
 }
 
 table#global > thead > tr > th
@@ -66,12 +65,18 @@ table#global > thead > tr > th
   font-family: monospace;
 }
 
+table#main > thead > tr > th
+{
+  width: 33%;
+}
+
 table#main > tbody > tr > td.clock-div
 {
   font-size: 1em;
   padding: 10px;
   text-align: center;
   background-color: var(--color2);
+
 }
 
 table#main > tbody > tr > td.clock-desc
