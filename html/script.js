@@ -93,16 +93,16 @@ function UpdateSystemClock()
 
     today = GetTodaySeconds(UserTimeZone)
 
-    doc_str = `${String(GetTimeHour(today)).padStart(2, '0')}h :`
-    doc_str += `${String(GetTimeMinute(today)).padStart(2, '0')}m :`
+    doc_str = `${String(GetTimeHour(today)).padStart(2, '0')}h : `
+    doc_str += `${String(GetTimeMinute(today)).padStart(2, '0')}m : `
     doc_str += `${String(GetTimeSeconds(today)).padStart(2, '0')}s `
 
     document.getElementById("clk-local").innerText = doc_str 
 
     today = GetTodaySeconds(SkyTimeZone)
 
-    doc_str = `${String(GetTimeHour(today)).padStart(2, '0')}h :`
-    doc_str += `${String(GetTimeMinute(today)).padStart(2, '0')}m :`
+    doc_str = `${String(GetTimeHour(today)).padStart(2, '0')}h : `
+    doc_str += `${String(GetTimeMinute(today)).padStart(2, '0')}m : `
     doc_str += `${String(GetTimeSeconds(today)).padStart(2, '0')}s `
 
     document.getElementById("clk-global").innerText = doc_str 
@@ -134,8 +134,8 @@ function UpdateDocumentDiff(clockid, next_event)
     if(day > 0)
         doc_str += `${day} dia(s) `
 
-    doc_str += `${String(hour).padStart(2, '0')}h :`
-    doc_str += `${String(minute).padStart(2, '0')}m :`
+    doc_str += `${String(hour).padStart(2, '0')}h : `
+    doc_str += `${String(minute).padStart(2, '0')}m : `
     doc_str += `${String(second).padStart(2, '0')}s `
 
     document.getElementById(element_diff).innerText = doc_str 
@@ -173,8 +173,8 @@ function UpdateDocumentEvent(clockid)
         doc_str = `${StrWeek[date.getDay()]}\n`
     }
 
-    doc_str += `${String(hour).padStart(2, '0')}h `
-    doc_str += `${String(minute).padStart(2, '0')}m`
+    doc_str += `${String(hour).padStart(2, '0')} h `
+    doc_str += `${String(minute).padStart(2, '0')} m`
 
     document.getElementById(element_event).innerText = doc_str
 
