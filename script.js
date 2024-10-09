@@ -113,6 +113,11 @@ function UpdateSystemClock()
     {
         next_event = UpdateDocumentEvent(i)
         UpdateDocumentDiff(i, next_event)
+
+        if((0 <= GetTodayWeekDay() < 2) || (GetTodayWeekDay() == 2 && GetTodaySeconds(SkyTimeZone) < (7 * 3600)))
+            document.getElementById("clk-treehouse-weather-state").innerText = 'Clima: Chuvoso'
+        else
+            document.getElementById("clk-treehouse-weather-state").innerText = 'Clima: Ensolarado'
     }
 }
 
@@ -193,16 +198,16 @@ function GetEventDiff(e_interval, next_event, e_weekday)
 
 function GetNextEventTime(e_interval, initial_time)
 {    
-    var today_sec   = GetTodaySeconds(0) 
-
+    var today_sec = GetTodaySeconds(0)
+    
     var next_event = initial_time + e_interval;
 
-    for(var i = initial_time; i <= today_sec; i += e_interval)
-        next_event = i + e_interval
+    for(var i = initial_time; i <= today_sec + e_interval; i += e_interval)
+        next_event = i
     
-    next_event = next_event + (UserTimeZone * 3600)
+    next_event += (UserTimeZone * 3600)
     next_event = next_event > 0 ? next_event : 86400 + next_event
-
+  
     return next_event
 }
 
@@ -217,7 +222,7 @@ function GetTodaySeconds(gmt)
     var date = GetUTCDate()
     var seconds = (date.getHours() + gmt) * 3600 + date.getMinutes() * 60 + date.getSeconds()
     seconds = seconds > 0 ? seconds : 86400 + seconds
-    return seconds
+    return seconds % 86400
 }
 
 function GetTodayHour(gmt) 
